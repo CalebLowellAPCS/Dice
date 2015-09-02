@@ -4,6 +4,11 @@ void setup()
 }
 void draw()
 {
+	background(0, 0, 0);
+
+	Die potato = new Die(150, 150);
+
+	potato.show();
 	//your code here
 }
 void mousePressed()
