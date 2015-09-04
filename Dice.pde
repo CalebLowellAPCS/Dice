@@ -1,5 +1,6 @@
 void setup()
 {
+	size(500, 500);
 	noLoop();
 }
 void draw()
@@ -20,7 +21,8 @@ class Die //models one single dice cube
 	//variable declarations here
 	Die(int x, int y) //constructor
 	{
-		//variable initializations here
+		rect(x, y, 50, 50);
+
 	}
 	void roll()
 	{
