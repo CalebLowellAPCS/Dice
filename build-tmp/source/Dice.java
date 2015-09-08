@@ -14,18 +14,23 @@ import java.io.IOException;
 
 public class Dice extends PApplet {
 
+
+int rectx = 230;
+int recty = 230;
+
 public void setup()
 {
-	size(512, 512);
+	size(500, 500);
 	noLoop();
 }
 public void draw()
 {
 	background(0, 0, 0);
 
-	Die potato = new Die(150, 150);
-
+	Die potato = new Die(rectx, recty);
 	potato.show();
+
+
 	//your code here
 }
 public void mousePressed()
@@ -37,7 +42,7 @@ class Die //models one single dice cube
 	//variable declarations here
 	Die(int x, int y) //constructor
 	{
-		rect(x, y, 50, 50);
+		rect(x, y, 40, 40);
 
 	}
 	public void roll()
@@ -46,7 +51,51 @@ class Die //models one single dice cube
 	}
 	public void show()
 	{
-		//your code here
+
+		int dots = (int)(Math.random()*6 + 1);
+
+		if (dots == 1){
+			ellipse(rectx + 20, recty + 20, 5, 5);
+
+		}
+		if (dots == 2){
+			ellipse(rectx + 10, recty + 10, 5, 5);
+			ellipse(rectx + 30, recty + 30, 5, 5);
+
+		}
+		if (dots == 3){
+			ellipse(rectx + 10, recty + 10, 5, 5);
+			ellipse(rectx + 20, recty + 20, 5, 5);
+			ellipse(rectx + 30, recty + 30, 5, 5);
+
+		}
+		if (dots == 4){
+			ellipse(rectx + 10, recty + 10, 5, 5);
+			ellipse(rectx + 10, recty + 30, 5, 5);
+			ellipse(rectx + 30, recty + 10, 5, 5);
+			ellipse(rectx + 30, recty + 30, 5, 5);
+
+
+		}
+		if (dots == 5){
+			ellipse(rectx + 10, recty + 10, 5, 5);
+			ellipse(rectx + 10, recty + 30, 5, 5);
+			ellipse(rectx + 30, recty + 10, 5, 5);
+			ellipse(rectx + 30, recty + 30, 5, 5);
+			ellipse(rectx + 20, recty + 20, 5, 5);
+
+
+		}
+		if (dots == 6){
+			ellipse(rectx + 10, recty + 10, 5, 5);
+			ellipse(rectx + 10, recty + 30, 5, 5);
+			ellipse(rectx + 30, recty + 10, 5, 5);
+			ellipse(rectx + 30, recty + 30, 5, 5);
+			ellipse(rectx + 10, recty + 20, 5, 5);
+			ellipse(rectx + 30, recty + 20, 5, 5);
+ 
+		}
+
 	}
 }
   static public void main(String[] passedArgs) {
