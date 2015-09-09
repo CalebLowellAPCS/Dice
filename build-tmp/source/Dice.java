@@ -14,24 +14,33 @@ import java.io.IOException;
 
 public class Dice extends PApplet {
 
-
-int rectx = 230;
-int recty = 230;
-
 public void setup()
 {
 	size(500, 500);
 	noLoop();
 }
+
+int rectx = 0;
+int recty = 0;
+int dots;
+
 public void draw()
 {
 	background(0, 0, 0);
 
 	Die potato = new Die(rectx, recty);
+	potato.roll();
 	potato.show();
 
+	for (int y = 0; y <= 500; y += 40) {
 
-	//your code here
+		for (int x = 0; x <= 500; x += 40) {
+			
+			rectx += 40;
+		}
+
+		recty += 40;
+	}
 }
 public void mousePressed()
 {
@@ -45,16 +54,18 @@ class Die //models one single dice cube
 		rect(x, y, 40, 40);
 
 	}
+
 	public void roll()
 	{
-		//your code here
+	
+		dots = (int)(Math.random()*6 + 1);
+
 	}
+
 	public void show()
 	{
-
-		int dots = (int)(Math.random()*6 + 1);
-
 		if (dots == 1){
+		
 			ellipse(rectx + 20, recty + 20, 5, 5);
 
 		}
