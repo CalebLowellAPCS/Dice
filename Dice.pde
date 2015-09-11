@@ -1,6 +1,6 @@
 void setup()
 {
-	size(500, 500);
+	size(520, 520);
 	noLoop();
 }
 
@@ -12,19 +12,19 @@ void draw()
 {
 	background(0, 0, 0);
 
-	Die potato = new Die(rectx, recty);
-	potato.roll();
-	potato.show();
 
-	for (int y = 0; y <= 500; y += 40) {
+	for (int recty = 0; recty <= 500; recty += 40) {
 
-		for (int x = 0; x <= 500; x += 40) {
+		for (int rectx = 0; rectx <= 500; rectx += 40) {
 			
-			rectx += 40;
+
+			Die potato = new Die(rectx, recty);
+			potato.roll();
+			potato.show();
 		}
 
-		recty += 40;
 	}
+	noLoop();
 }
 void mousePressed()
 {
@@ -35,8 +35,10 @@ class Die //models one single dice cube
 	//variable declarations here
 	Die(int x, int y) //constructor
 	{
-		rect(x, y, 40, 40);
-
+		roll();
+		show();
+		rectx = x;
+		recty = y;
 	}
 
 	void roll()
@@ -48,6 +50,8 @@ class Die //models one single dice cube
 
 	void show()
 	{
+		rect(rectx, recty, 40, 40);
+
 		if (dots == 1){
 		
 			ellipse(rectx + 20, recty + 20, 5, 5);
