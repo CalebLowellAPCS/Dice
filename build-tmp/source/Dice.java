@@ -66,7 +66,11 @@ class Die //models one single dice cube
 
 	public void show()
 	{
+		fill(0, 0, 0);
+
 		rect(rectx, recty, 40, 40);
+
+		fill(255, 215, 0);
 
 		if (dots == 1){
 		
